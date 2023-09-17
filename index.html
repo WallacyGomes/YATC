@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>You Are The Calculator</title>
+</head>
+<body>
+    <div class="presentation animate__animated animate__fadeOut animate__delay-2s">
+        <h1>You Are The Calculator!</h1>
+        <p>Do a calculation that results in the black square number!</p>
+    </div>
+    <main>
+        <div class="number">0</div>
+        <div class="calculator">
+            <input class="calc" type="text" name="calc" id="calc">
+            <div class="remove">
+                <button data-btn data-clean>C</button>
+                <button data-btn data-backspace><img src="backspace.svg" alt=""></button>
+            </div>
+            <button data-btn value="7">7</button>
+            <button data-btn value="8">8</button>
+            <button data-btn value="9">9</button>
+            <button data-btn value="+">+</button>
+            <button data-btn value="4">4</button>
+            <button data-btn value="5">5</button>
+            <button data-btn value="6">6</button>
+            <button data-btn value="-">-</button>
+            <button data-btn value="1">1</button>
+            <button data-btn value="2">2</button>
+            <button data-btn value="3">3</button>
+            <button data-btn value="x">x</button>
+            <button data-btn value="0">0</button>
+            <button data-btn value=".">.</button>
+            <button data-btn value="÷">÷</button>
+            <button data-btn class="equal">=</button>
+        </div>
+    </main>
+
+    <script type="module" src="./js/script.js"></script>
+</body>
+</html>
