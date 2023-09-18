@@ -4,6 +4,7 @@ export default class Calculator {
         this.calc = document.querySelector('#calc');
         this.divBtns = document.querySelector('.calculator');
         this.btns = document.querySelectorAll('.calculator button');
+        this.btnsSignal = document.querySelectorAll('[data-signal]')
         this.backspaceBtns = document.querySelector('.remove');
         this.equal = document.querySelector('.equal');
     }
@@ -11,6 +12,16 @@ export default class Calculator {
     drawNumber() {
         const drawNumber = Math.floor(Math.random() * 100) + 1;
         this.number.innerText = drawNumber;
+    }
+
+    disableRandomSignal() {
+        const randomIndex = Math.floor(Math.random() * this.btnsSignal.length);
+        this.disableSignal = this.btnsSignal[randomIndex];
+        this.disableSignal.disabled = true;
+    }
+
+    enableSignal() {
+        this.disableSignal.disabled = false;
     }
 
     showInCalculator(calc) {
@@ -65,6 +76,8 @@ export default class Calculator {
             if (result == this.number.innerText) {
                 this.calc.classList.add('point');
                 this.drawNumber();
+                this.enableSignal();
+                this.disableRandomSignal();
                 this.calc.value = result;
             } else {
                 this.calc.classList.add('miss');
@@ -74,6 +87,8 @@ export default class Calculator {
             if (result == this.number.innerText) {
                 this.calc.classList.add('point')
                 this.drawNumber();
+                this.enableSignal();
+                this.disableRandomSignal();
                 this.calc.value = '';
             } else {
                 this.calc.classList.add('miss');
@@ -83,6 +98,8 @@ export default class Calculator {
             if (result == this.number.innerText) {
                 this.calc.classList.add('point')
                 this.drawNumber();
+                this.enableSignal();
+                this.disableRandomSignal();
                 this.calc.value = '';
             } else {
                 this.calc.classList.add('miss');
@@ -92,6 +109,8 @@ export default class Calculator {
             if (result == this.number.innerText) {
                 this.calc.classList.add('point')
                 this.drawNumber();
+                this.enableSignal();
+                this.disableRandomSignal();
                 this.calc.value = '';
             } else {
                 this.calc.classList.add('miss');
@@ -130,6 +149,7 @@ export default class Calculator {
         this.bindEvents();
         this.addEvents();
         this.drawNumber();
+        this.disableRandomSignal();
     }
 
 }

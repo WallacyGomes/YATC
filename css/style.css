@@ -113,3 +113,8 @@ main {
 .equal:hover {
     background-color: #fd3b19 !important;
 }
+
+button:disabled {
+    background-color: #c2c2c2 !important;
+    cursor: not-allowed;
+}
