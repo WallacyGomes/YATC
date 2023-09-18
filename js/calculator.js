@@ -45,7 +45,16 @@ export default class Calculator {
         const n1 = +splitting[0];
         const n2 = +splitting[1];
         const signal = this.calc.value.match(regexpSignal).join();
-        this.resolveCalc(n1, n2, signal);
+        this.checkingCalc(n1, n2, signal);
+    }
+
+    checkingCalc(n1, n2, signal) {
+        if (n1 === 0 || n2 === 0) {
+            this.calc.classList.add('miss');
+            this.removeClassPointAndMiss();
+        } else {
+            this.resolveCalc(n1, n2, signal);
+        }
     }
 
     resolveCalc(n1, n2, signal) {
